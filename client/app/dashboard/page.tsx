@@ -69,26 +69,27 @@ export default async function DashboardPage() {
 
         <TableBody>
           {contactData.map((item, i) => (
-            <Popover key={item._id}>
-              <TableRow>
-                <TableCell>{i + 1}</TableCell>
-                <TableCell>{item.name}</TableCell>
-                <TableCell>{item.email}</TableCell>
-                <TableCell>{item.phone}</TableCell>
-                <TableCell>
+            <TableRow key={item._id}>
+              <TableCell>{i + 1}</TableCell>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.email}</TableCell>
+              <TableCell>{item.phone}</TableCell>
+              <TableCell>
+                <Popover>
                   <PopoverTrigger>
-                    <button className="max-w-50 truncate text-left text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <span className="max-w-50 truncate block text-left text-sm text-muted-foreground hover:text-foreground transition-colors hover:cursor-pointer">
                       {item.message}
-                    </button>
+                    </span>
                   </PopoverTrigger>
-                </TableCell>
-              </TableRow>
-
-              <PopoverContent className="">
-                <p className="text-sm font-medium mb-1">Message</p>
-                <p className="text-sm text-muted-foreground">{item.message}</p>
-              </PopoverContent>
-            </Popover>
+                  <PopoverContent className="">
+                    <p className="text-sm font-medium mb-1">Message</p>
+                    <p className="text-sm text-muted-foreground text-justify">
+                      {item.message}
+                    </p>
+                  </PopoverContent>
+                </Popover>
+              </TableCell>
+            </TableRow>
           ))}
         </TableBody>
       </Table>
