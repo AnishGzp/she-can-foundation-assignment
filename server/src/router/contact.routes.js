@@ -8,6 +8,7 @@ const contactRouter = express.Router();
 contactRouter.use(authenticate);
 
 contactRouter.post("/", contactValidator, contactController.create);
+contactRouter.get("/", contactController.get);
 contactRouter.delete("/:id", contactController.delete);
 
 export default contactRouter;

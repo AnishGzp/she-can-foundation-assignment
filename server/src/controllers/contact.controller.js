@@ -18,6 +18,16 @@ export class ContactController {
     }
   }
 
+  async get(req, res, next) {
+    try {
+      const data = await contactService.get();
+
+      sendSuccess(res, "Data fetched successfully", data);
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async delete(req, res, next) {
     try {
       const { id } = req.params;

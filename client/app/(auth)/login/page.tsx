@@ -55,8 +55,6 @@ export default function LoginPage() {
 
       const data = await response.json();
 
-      console.log(data);
-
       if (!response.ok || !data.success) {
         if (data.error) {
           const errorMsg = data.error[0]?.msg;

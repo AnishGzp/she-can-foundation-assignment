@@ -1,6 +1,6 @@
 import { Heart } from "lucide-react";
-import { Button } from "../button";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export default function Header({ isLoggedIn }: { isLoggedIn: boolean }) {
   return (

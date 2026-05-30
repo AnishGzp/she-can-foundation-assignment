@@ -5,7 +5,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "my-super-secret-key";
 
 export const authenticate = (req, res, next) => {
   try {
-    const token = res.cookies.token;
+    const token = req.cookies.token;
     if (!token) {
       throw new AppError(400, "Unauthorized Access");
     }

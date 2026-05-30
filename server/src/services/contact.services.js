@@ -17,6 +17,10 @@ export class ContactService {
     }
   }
 
+  async get() {
+    return await contactModel.find({});
+  }
+
   async delete(id) {
     try {
       const contact = await contactModel.findByIdAndDelete(id);
