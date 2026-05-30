@@ -9,6 +9,7 @@ import { handleError } from "./utils/handleError.js";
 import { dbConnect } from "./config/dbConnect.js";
 import { adminSeeder } from "./config/seeding.js";
 import authRoutes from "./router/auth.routes.js";
+import contactRouter from "./router/contact.routes.js";
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.get("/api/health", (req, res) => {
 
 // APIs
 app.use("/api/auth", authRoutes);
+app.use("/api/contact", contactRouter);
 
 // Global error handler
 app.use(handleError);
