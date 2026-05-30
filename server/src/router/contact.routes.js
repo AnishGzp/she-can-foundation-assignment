@@ -5,9 +5,8 @@ import { contactController } from "../controllers/contact.controller.js";
 
 const contactRouter = express.Router();
 
-contactRouter.use(authenticate);
-
 contactRouter.post("/", contactValidator, contactController.create);
+contactRouter.use(authenticate);
 contactRouter.get("/", contactController.get);
 contactRouter.delete("/:id", contactController.delete);
 

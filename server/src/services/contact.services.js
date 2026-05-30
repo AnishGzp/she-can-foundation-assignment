@@ -18,7 +18,7 @@ export class ContactService {
   }
 
   async get() {
-    return await contactModel.find({});
+    return await contactModel.find({}).sort({ createdAt: -1 });
   }
 
   async delete(id) {
