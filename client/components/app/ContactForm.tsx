@@ -161,7 +161,7 @@ export default function ContactForm() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Link href="https://www.instagram.com/shecanfoundation">
+            <Link href="https://www.instagram.com/shecanfoundation.ngo">
               <div className="p-2 bg-white rounded-full">
                 <svg
                   viewBox="0 0 15 15"
